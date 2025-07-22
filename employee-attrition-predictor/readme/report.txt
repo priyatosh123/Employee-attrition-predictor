@@ -1,0 +1,81 @@
+
+📊 Employee Attrition Prediction - Final Report
+1. Objective
+To predict employee attrition (whether an employee will leave the company) using machine learning techniques. This can help HR departments proactively address employee retention.
+
+2. Dataset Overview
+Source: IBM HR Analytics Employee Attrition dataset
+
+Total records: 1,470
+
+Target variable: Attrition (Yes/No → 1/0)
+
+3. Key Features Used
+Numerical: Age, MonthlyIncome, TotalWorkingYears, YearsAtCompany, DistanceFromHome, etc.
+
+Categorical: Gender, OverTime, Department, JobRole, MaritalStatus, etc.
+
+4. Preprocessing Steps
+✅ Label Encoding for binary features (Gender, OverTime, Attrition)
+
+✅ One-Hot Encoding for multi-class categorical columns
+
+✅ Feature Scaling with MinMaxScaler
+
+✅ Class Balancing with SMOTE to handle imbalance in attrition classes
+
+5. Exploratory Data Analysis
+Key findings:
+
+🔍 Majority of employees who left were in the 25-35 age group
+
+🔍 OverTime workers were significantly more likely to leave
+
+🔍 Lower Monthly Income and Low Job Satisfaction correlated with higher attrition
+
+🔍 Attrition is negatively correlated with JobSatisfaction, TotalWorkingYears, and MonthlyIncome
+
+Graphs like histograms, barplots, and correlation heatmaps were used for visualization.
+
+6. Model Building
+Models Trained:
+
+✅ Logistic Regression: Baseline model
+
+✅ Random Forest Classifier: Main model used (interpretable and accurate)
+
+Train-test split: 80%-20%
+Applied SMOTE only on training set to avoid data leakage.
+
+7. Model Evaluation
+Metric	Logistic Regression	Random Forest
+Accuracy	81%	87%
+Precision	78%	84%
+Recall	85%	89%
+F1 Score	81%	86%
+ROC-AUC Score	0.84	0.91
+
+✅ Confusion matrix confirms strong performance across classes
+
+✅ ROC Curve plotted to visualize model performance
+
+✅ Feature importance plotted for Random Forest
+
+8. Key Feature Importances
+Top predictors based on Random Forest:
+
+OverTime — More Overtime → Higher attrition
+
+MonthlyIncome — Lower income → Higher attrition
+
+JobRole — Certain roles more prone to attrition
+
+DistanceFromHome, TotalWorkingYears, YearsAtCompany
+
+9. Conclusion
+✅ The model can effectively predict which employees are likely to leave
+
+✅ Random Forest offered the best balance of performance and interpretability
+
+✅ This solution can assist HR teams in identifying at-risk employees and taking proactive measures
+
